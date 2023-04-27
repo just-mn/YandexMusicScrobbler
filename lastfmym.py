@@ -1,23 +1,17 @@
+import time
 import pylast
 from yandex_music import Client
-import time
 
-
-API_KEY = "6b5d8a7decab0c7b547a90dbbf37efc7"
-API_SECRET = "9778621ef705328e52b161bd76a7ac40"
-
-LastFM_username = "UR_LASTFM_USER" # <- Your LastFM username
-LastFM_password = "UR_LASTFM_PASSWD" # <- Your LastFM password
-
-YandexMusic_TOKEN = "UR_YM_TOKEN" # <- Your YandexMusic token
+LastFM_username = "UR_LASTFM_USER"
+LastFM_password = "UR_LASTFM_PASSWD"
+YandexMusic_TOKEN = "UR_YM_TOKEN"
 
 network = pylast.LastFMNetwork(
-    api_key=API_KEY,
-    api_secret=API_SECRET,
+    api_key="6b5d8a7decab0c7b547a90dbbf37efc7",
+    api_secret="9778621ef705328e52b161bd76a7ac40",
     username=LastFM_username,
     password_hash=pylast.md5(LastFM_password),
 )
-
 client = Client(YandexMusic_TOKEN)
 
 last_artist = ""

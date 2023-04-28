@@ -3,7 +3,11 @@ A simple script to return YandexMusic scrobbling
 ## How to install (for linux-like systems)
 <code>sh -c "$(curl -fsSL https://raw.githubusercontent.com/just-mn/YandexMusicScrobbler/main/setup.sh)" cd YandexMusicScrobbler && python scrobbler.py</code>
 ## FAQ
+### Does scrobbling of tracks from "My vibe" work?
+No. Yandex did not provide such a function in their API.
 ### Will scrobbling work when the script is not running?
+No.
+### If the same track is played multiple times in a row, will it be included in the scrobble list?
 No.
 ### Can I run the script on a non linux system?
 Yes. Because it's written in Python. If you don't know how to do it, google it.

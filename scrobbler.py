@@ -24,18 +24,11 @@ while True:
     queues = client.queues_list()
     last_queue = client.queue(queues[0].id)
     try:
-        try:
-            try:
-                current_track_id = last_queue.get_current_track()
-                current_track = current_track_id.fetch_track()
-                artist = current_track.artists[0].name
-                title = current_track.title
-                duration = current_track.duration_ms // 1000
-            except TypeError:
-                pass
-        
-        except Exception:
-            pass
+        current_track_id = last_queue.get_current_track()
+        current_track = current_track_id.fetch_track()
+        artist = current_track.artists[0].name
+        title = current_track.title
+        duration = current_track.duration_ms // 1000
 
         if artist != last_artist or title != last_title or duration != last_duration:
             if last_artist != "" and last_title != "" and last_duration != 0 and not scrobbled:
@@ -51,7 +44,7 @@ while True:
             scrobbled = False
 
             network.update_now_playing(artist=last_artist, title=last_title)
-    except NameError:
+    except Exception:
         time.sleep(30)
 
     time.sleep(5)

@@ -22,9 +22,18 @@ echo "    |_|\__,_|_| |_|\__,_|\___/_/\_\_|  |_|\__,_|___/_|\___| |_____/ \___|_
 echo "                                                                                                           ";
 echo "                                                                                                           ";
 
-read -p "Enter LastFM username: " lastfmusername
-read -p "Enter LastFM password: " lastfmpasswd
-read -p "Enter yandex music token (check how to get token in readme.md): " ymtoken
+echo -n "Enter LastFM username: "
+read lastfmusername
+echo -n "Enter LastFM password: "
+stty -echo
+read lastfmpasswd
+stty echo
+echo
+echo -n "Enter yandex music token (check how to get token in readme.md): "
+stty -echo
+read ymtoken
+stty echo
+echo
 
 sed -i 's/LastFM_username = "UR_LASTFM_USER"/LastFM_username = "'"$lastfmusername"'"/' scrobbler.py
 sed -i 's/LastFM_password = "UR_LASTFM_PASSWD"/LastFM_password = "'"$lastfmpasswd"'"/' scrobbler.py

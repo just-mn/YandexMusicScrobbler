@@ -10,7 +10,7 @@ echo "                                                                          
 echo "                                                                                                           ";
 
 git clone https://github.com/just-mn/YandexMusicScrobbler
-cd lastfmym
+cd YandexMusicScrobbler
 pip install -r requirements.txt
 clear
 echo " __     __             _           __  __           _         _____                _     _     _           ";

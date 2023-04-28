@@ -1,7 +1,7 @@
 # YandexMusic Scrobbler
 A simple script to return YandexMusic scrobbling 
 ## How to install (for linux-like systems)
-<code>sh -c "$(curl -fsSL https://raw.githubusercontent.com/just-mn/YandexMusicScrobbler/main/setup.sh)" && python scrobbler.py</code>
+<code>sh -c "$(curl -fsSL https://raw.githubusercontent.com/just-mn/YandexMusicScrobbler/main/setup.sh)" cd YandexMusicScrobbler && python scrobbler.py</code>
 ## FAQ
 ### Will scrobbling work when the script is not running?
 No.

@@ -53,6 +53,5 @@ while True:
             network.update_now_playing(artist=last_artist, title=last_title)
     except NameError:
         time.sleep(30)
-        pass
 
     time.sleep(5)

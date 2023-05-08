@@ -37,4 +37,4 @@ echo
 
 sed -i 's/LastFM_username = "UR_LASTFM_USER"/LastFM_username = "'"$lastfmusername"'"/' scrobbler.py
 sed -i 's/LastFM_password = "UR_LASTFM_PASSWD"/LastFM_password = "'"$lastfmpasswd"'"/' scrobbler.py
-sed -i 's/YandexMusic_TOKEN = "UR_YM_TOKEN"/YandexMusic_TOKEN = "'"$ymtoken"'"/' scrobbler.py
+sed -i 's/YandexMusic_TOKEN = "UR_YM_TOKEN"/YandexMusic_TOKEN = "'"$ymtoken"'"/g' scrobbler.py

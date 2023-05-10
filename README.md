@@ -13,3 +13,23 @@ No.
 No.
 ### Can I run the script on a non linux system?
 Yes. Because it's written in Python. If you don't know how to do it, google it.
+## How to create a systemd daemon? (for pro)
+Create a service file
+
+<code>sudo nano /etc/systemd/system/scrobbler.service</code>
+
+Put this code and edit <your_username>
+```systemd
+[Unit]
+Description=Scrobbler Service
+After=network.target
+
+[Service]
+User=<your_username>
+WorkingDirectory=/home/<your_username>/YandexMusicScrobbler/
+ExecStart=/usr/bin/python3 /home/<your_username>/YandexMusicScrobbler/scrobbler.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+```

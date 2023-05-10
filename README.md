@@ -1,4 +1,4 @@
-# YandexMusic Scrobbler
+# YandexMusic Scrobbler (public beta)
 A simple script to return YandexMusic scrobbling 
 ## How to install (for linux-like systems)
 <code>sh -c "$(curl -fsSL https://raw.githubusercontent.com/just-mn/YandexMusicScrobbler/main/setup.sh)" && cd YandexMusicScrobbler && python scrobbler.py</code>

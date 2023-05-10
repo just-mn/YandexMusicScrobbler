@@ -27,8 +27,8 @@ except:
 
 try:
     network = pylast.LastFMNetwork(
-    api_key="6b5d8a7decab0c7b547a90dbbf37efc7",
-    api_secret="9778621ef705328e52b161bd76a7ac40",
+    api_key="086a0b632e5e3297ac1850fdb8e19ad2",
+    api_secret="a25433d094644b8447b1e278cd253bf4",
     username=LastFM_username,
     password_hash=pylast.md5(LastFM_password)
 )
@@ -73,7 +73,7 @@ while True:
         title = "error"
         ectb = True
     except:
-        print(f'{nowtime()} Произошла непредвиденная ошибка при получении последнего трека')
+        print(f'[{nowtime()}] Произошла непредвиденная ошибка при получении последнего трека')
     if artist != last_artist or title != last_title or duration != last_duration:
         if last_artist != "" and last_title != "" and last_duration != 0 and last_title != "error" and not scrobbled:
             time_passed = int(time.time()) - last_start_time

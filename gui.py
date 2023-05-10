@@ -1,4 +1,5 @@
 import sys
+import re
 from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QLabel, QLineEdit, QPushButton
 
 class LoginWindow(QWidget):
@@ -37,13 +38,18 @@ class LoginWindow(QWidget):
         lastfm_password = self.lastfm_password_input.text()
         yandex_music_token = self.yandex_music_token_input.text()
 
-        with open('scrobbler.py', 'w') as f:
+        with open('scrobbler.py', 'r') as f:
+            content = f.read()
+
         content = re.sub(r'LastFM_username = "UR_LASTFM_USER"', f'LastFM_username = "{lastfm_username}"', content)
         content = re.sub(r'LastFM_password = "UR_LASTFM_PASSWD"', f'LastFM_password = "{lastfm_password}"', content)
         content = re.sub(r'YandexMusic_token = "UR_YM_TOKEN"', f'YandexMusic_token = "{yandex_music_token}"', content)
 
-        print('Credentials saved to scrobbler.py, please run "python scrobbler.py"')
-        
+        with open('scrobbler.py', 'w') as f:
+            f.write(content)
+
+        print('Credentials updated in scrobbler, run "python scrobbler.py"')
+
 
         self.close()
 

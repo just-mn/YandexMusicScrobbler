@@ -1,5 +1,9 @@
 #!/bin/bash
 clear
+git clone https://github.com/just-mn/YandexMusicScrobbler
+cd YandexMusicScrobbler
+pip install -r requirements.txt
+clear
 echo " __     __             _           __  __           _         _____                _     _     _           ";
 echo " \ \   / /            | |         |  \/  |         (_)       / ____|              | |   | |   | |          ";
 echo "  \ \_/ /_ _ _ __   __| | _____  _| \  / |_   _ ___ _  ___  | (___   ___ _ __ ___ | |__ | |__ | | ___ _ __ ";

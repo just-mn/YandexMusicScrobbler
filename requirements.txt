@@ -1,2 +1,3 @@
 pylast
 yandex_music
+pyqt5

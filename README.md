@@ -1,15 +1,48 @@
 # YandexMusic Scrobbler (public beta)
-A simple script to return YandexMusic scrobbling 
-## How to install (for linux-like systems)
-<code>sh -c "$(curl -fsSL https://raw.githubusercontent.com/just-mn/YandexMusicScrobbler/main/setup.sh)" && cd YandexMusicScrobbler && python scrobbler.py</code>
-## FAQ
-### How to get a YandexMusic token?
-Follow the [link](https://oauth.yandex.com/authorize?response_type=token&client_id=23cabbbdc6cd418abb4b39c32c41195d), log into your Yandex account and after refreshing the page, copy the access_token value from the address bar as soon as possible before you are transferred to the web player.
-### Does scrobbling of tracks from "My vibe" work?
-No. Yandex did not provide such a function in their API.
-### Will scrobbling work when the script is not running?
-No.
-### If the same track is played multiple times in a row, will it be included in the scrobble list?
-No.
-### Can I run the script on a non linux system?
-Yes. Because it's written in Python. If you don't know how to do it, google it.
+
+A simple script to return YandexMusic scrobbling
+
+## Installation
+1. Obtain a YandexMusic token:
+   - Follow the [link](https://oauth.yandex.ru/authorize?response_type=token&client_id=23cabbbdc6cd418abb4b39c32c41195d), log into your Yandex account and after refreshing the page, copy the access_token value from the address bar as soon as possible before you are transferred to the web player.
+   ![token](ща)
+
+2. Clone the repository, install requirements and run the setup script
+   ```
+   git clone https://github.com/just-mn/YandexMusicScrobbler.git && cd YandexMusicScrobbler && pip install -r requirements.txt && python setup.py
+   ```
+
+3. Start scrobbler:
+   ```
+   python scrobbler.py
+   ```
+## Create a systemd daemon (optional, for pro)
+   - Open the systemd service file with the following command:
+     ```
+     sudo nano /etc/systemd/system/scrobbler.service
+     ```
+   - Copy and paste the following configuration into the file:
+     ```
+     [Unit]
+     Description=Scrobbler Service
+     After=network.target
+
+     [Service]
+     User=<your_username>
+     WorkingDirectory=/home/<your_username>/YandexMusicScrobbler/
+     ExecStart=/usr/bin/python3 /home/<your_username>/YandexMusicScrobbler/scrobbler.py
+     Restart=always
+
+     [Install]
+     WantedBy=multi-user.target
+     ```
+     Replace `<your_username>` with your Linux username.
+   - Save the file and reload the systemd daemon:
+     ```
+     sudo systemctl daemon-reload
+     ```
+   - Enable and start the scrobbler service:
+     ```
+     sudo systemctl enable scrobbler.service
+     sudo systemctl start scrobbler.service
+     ```

@@ -1,2 +1,4 @@
 pylast
 yandex_music
+pyyaml
+PyQt5

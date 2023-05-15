@@ -10,12 +10,15 @@ A simple script to return YandexMusic scrobbling
    ```
    git clone https://github.com/just-mn/YandexMusicScrobbler.git && cd YandexMusicScrobbler && pip install -r requirements.txt && python setup.py
    ```
-
+   (or if you use Windows PowerShell)
+   ```
+   git clone https://github.com/just-mn/YandexMusicScrobbler.git ; cd YandexMusicScrobbler ; pip install -r requirements.txt ; python setup.py
+   ```
 3. Start scrobbler:
    ```
    python scrobbler.py
    ```
-## Create a systemd daemon (optional, for pro)
+## Create a systemd daemon (linux only, for pro)
    - Open the systemd service file with the following command:
      ```
      sudo nano /etc/systemd/system/scrobbler.service

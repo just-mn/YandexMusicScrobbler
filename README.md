@@ -1,11 +1,10 @@
-# YandexMusic Scrobbler (public beta)
-
+# YandexMusic Scrobbler
 A simple script to return YandexMusic scrobbling
 
 ## Installation
 1. Obtain a YandexMusic token:
    - Follow the [link](https://oauth.yandex.ru/authorize?response_type=token&client_id=23cabbbdc6cd418abb4b39c32c41195d), log into your Yandex account and after refreshing the page, copy the access_token value from the address bar as soon as possible before you are transferred to the web player.
-   ![token](ща)
+   ![token](https://github.com/just-mn/YandexMusicScrobbler/blob/main/assets/token.png?raw=true)
 
 2. Clone the repository, install requirements and run the setup script
    ```
